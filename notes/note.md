@@ -32,3 +32,12 @@ Unit 1.7 Project 1
         If A if a 16-bit bus, then A[0] is the right-most bit, and A[15] is the
         left-most bit
 
+Unit 2.2 Binary Addition
+
+    Half Adder, Full Adder, Multi-bit Adder (16-bit Adder)
+
+Unit 2.3 Negative Numbers
+
+    Computing -x
+        1) take all 1-s, and subtract our x from it (just flip the bits)
+        2) add 1
