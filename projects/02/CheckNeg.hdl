@@ -1,0 +1,12 @@
+/**
+ * Check input for negative value
+ * out 1 if in[15] is 1
+ */
+
+CHIP CheckNeg {
+    IN in[16];
+    OUT out;
+
+    PARTS:
+    And(a=in[15],  b=true, out=out);
+}
