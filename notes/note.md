@@ -94,3 +94,19 @@ Unit 3
     ROM32K(address= ,out= );
     Screen(in= ,load= ,address= ,out= );
     Xor(a= ,b= ,out= );
+
+
+    RAM64:
+	Sub-busing can only be used on buses that are named in the IN and OUT statements of an HDL file, or inputs and outputs of the chip-parts used in the PARTS section. If you need a sub-bus of an internal  bus, you must create the narrower bus as an output from a chip-part. For example:
+	CHIP Foo {
+	   IN in[16];
+	   OUT out;
+	PARTS:
+	   Something16 (in=in, out=notIn);
+	   Or8Way (in=notIn[4..11], out=out);
+	}
+
+	This implementation causes an error on the Or8Way statement. This needs to be coded as:
+	   Something16 (in=in, out[4..11]=notIn);
+	   Or8Way (in=notIn, out=out);
+
